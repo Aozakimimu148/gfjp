@@ -1,0 +1,441 @@
+﻿<div class="tab_formation">
+    <div class="panel">
+        <label class="view_equipment_button hover"><input type="checkbox" class="view_equipment">装備選択</label>
+        <label class="skill_all_button hover"><input type="checkbox" class="skill_all">オールスキル</label>
+        <table class="formation" border="1" cellpadding="0">
+        </table>
+        <div class="fairy_container">
+            <div class="button hover select_fairy">フェアリー選択</div>
+            <div class="fairy_control_container xhidden">
+                <div class="item button hover fairy"></div>
+                <div class="item control">
+                    <select class="rarity">
+                        <option value="5">★★★★★</option>
+                        <option value="4">★★★★</option>
+                        <option value="3">★★★</option>
+                        <option value="2">★★</option>
+                        <option value="1">★</option>
+                    </select>
+                    <select class="level">
+                        <option value="100">100</option>
+                        <option value="99">99</option>
+                        <option value="98">98</option>
+                        <option value="97">97</option>
+                        <option value="96">96</option>
+                        <option value="95">95</option>
+                        <option value="94">94</option>
+                        <option value="93">93</option>
+                        <option value="92">92</option>
+                        <option value="91">91</option>
+                        <option value="90">90</option>
+                        <option value="80">80</option>
+                        <option value="70">70</option>
+                        <option value="60">60</option>
+                        <option value="50">50</option>
+                        <option value="40">40</option>
+                        <option value="30">30</option>
+                        <option value="20">20</option>
+                        <option value="10">10</option>
+                        <option value="1">1</option>
+                    </select>
+                    <label class="skill_control_label"><input type="checkbox" class="skill_control">スキル</label>
+                    <select class="skill_level">
+                        <option value="10">10</option>
+                        <option value="9">9</option>
+                        <option value="8">8</option>
+                        <option value="7">7</option>
+                        <option value="6">6</option>
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                    <select class="mastery">
+                    </select>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="calculate_control">
+            <div class="button hover calculate">予想DPS表</div>
+            <div class="control_input"><input type="text" class="endTime" value="20"/>秒</div>
+            <div class="control_input walkTime">開幕ムーブタイム<input type="text" value="0"/>秒</div>
+            <div class="button hover dmgLinkSwitch ">シングルDPS</div>
+            <div class="clear"></div>
+            <div class="button hover simulation">DPS模擬計算</div>
+        </div>
+        <div class="clear"></div>
+        <div class="performance_header">
+            <div class="title dpsSum">パーティーDPS</div>
+            <div class="value dpsSum">-</div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="fairy_performance">
+            <div class="title head">フェアリーバフ</div>
+            <div class="title">ダメージ</div>
+            <div class="value dmg">-</div>
+            <div class="title">ヒット</div>
+            <div class="value hit">-</div>
+            <div class="title">ドッジ</div>
+            <div class="value dodge">-</div>
+            <div class="title">アーマー</div>
+            <div class="value armor">-</div>
+            <div class="title">クリティカルダメージ</div>
+            <div class="value criDmg">-</div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="performance_container">
+        </div>
+        <div class="clear"></div>
+        <div class="battle_control">
+            <div class="control_input">敵ドッジ<input type="text" class="enemyDodge" value="10"/></div>
+            <div class="control_input">敵アーマー<input type="text" class="enemyArmor" value="0"/></div>
+            <div class="control_input">敵数<input type="text" class="enemyCount" value="1"/></div>
+            <div class="control_input"><label class="hover"><input type="checkbox" class="enemyEliteTarget">エリート</label></div>
+            <div class="control_input"><label class="hover"><input type="checkbox" class="battleisNight">夜戦モード</label></div>
+            <div class="battleFortress_container">
+                <label class="hover"><input type="checkbox" class="battleFortress">バトル要塞効果</label>
+                <select class="fortress_level">
+                    <option value="10">10</option>
+                    <option value="9">9</option>
+                    <option value="8">8</option>
+                    <option value="7">7</option>
+                    <option value="6">6</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+    <div><br></div>
+    <div><input id="code"></div>
+    <div class="button hover update_log"></div>
+    <div class="last_update_time"></div>
+    <div class="button hover debug xhidden"></div>
+    <div><br></div>
+    <div><br></div>
+    <div><br></div>
+    <div><br></div>
+    <div><br></div>
+    <div><br></div>
+    <div><br></div>
+    <div><br></div>
+    <div><br></div>
+    <div><br></div>
+</div>
+
+
+<div id="picker" title="タイプ選択">
+    <div class="button hover remove">リムーブ</div>
+    <table class="picker_table">
+    </table>
+    <div class="button hover close">取り消し</div>
+</div>
+
+<div id="picker_by_type" title="人形選択">
+    <div class="picker_char_container">
+        エリアバフ
+        <select class="attr">
+            <option value=""></option>
+            <option value="hit">ヒット</option>
+            <option value="dmg">ダメージ</option>
+            <option value="fireOfRate">射撃速度</option>
+            <option value="dodge">ドッジ</option>
+            <option value="armor">アーマー</option>
+            <option value="criRate">クリティカル率</option>
+            <option value="cooldownTime">クールダウン</option>
+        </select>
+    </div>
+    <div class="rarity_extra">
+        EXTRA
+        <table class="picker_table">
+        </table>
+    </div>
+    <div class="rarity_5">
+        ★★★★★
+        <table class="picker_table">
+        </table>
+    </div>
+
+    <div class="rarity_4">
+        ★★★★
+        <table class="picker_table">
+        </table>
+    </div>
+
+    <div class="rarity_3">
+        ★★★
+        <table class="picker_table">
+        </table>
+    </div>
+
+    <div class="rarity_2">
+        ★★
+        <table class="picker_table">
+        </table>
+    </div>
+    <div class="button hover close">取り消し</div>
+</div>
+
+<div id="picker_equipment" title="装備選択">
+    <div class="button hover remove">リムーブ</div>
+    <div class="rarity_5">
+        ★★★★★
+        <table class="picker_table">
+        </table>
+    </div>
+
+    <div class="rarity_4">
+        ★★★★
+        <table class="picker_table">
+        </table>
+    </div>
+
+    <div class="rarity_3">
+        ★★★
+        <table class="picker_table">
+        </table>
+    </div>
+
+    <div class="rarity_2">
+        ★★
+        <table class="picker_table">
+        </table>
+    </div>
+    <div class="button hover close">取り消し</div>
+</div>
+
+<div id="picker_fairy" title="フェアリー選択">
+    <div class="button hover remove">リムーブ</div>
+    <div class="battle">
+        バトルフェアリー
+        <table class="picker_table">
+        </table>
+    </div>
+
+    <div class="strategy">
+        ストラテジーフェアリー
+        <table class="picker_table">
+        </table>
+    </div>
+
+    <div class="button hover close">取り消し</div>
+</div>
+
+<div id="detail" title="">
+    <div class="detail_container">
+    </div>
+</div>
+
+<div id="detailCalculate" title="">
+    <div class="control_input"><input type="text" id="times" value="100"/>回数</div>
+    <div class="button hover startSimulation">シミュ開始</div>
+    <div id="text"></div>
+    <div id="detailCalculateContainer" style="min-width: 1000px; height: 400px; margin: 0 auto"></div>
+    <div class="button hover close">取り消し</div>
+</div>
+
+<div id="updateDialog" title="">
+    <div>
+        <a href="https://github.com/Aozakimimu148/gfjp">
+            <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png">github</a>
+        <a href="https://twitter.com/a17654283">
+            <img src="http://icons.iconarchive.com/icons/limav/flat-gradient-social/128/Twitter-icon.png">Twitter</a>
+    </div>
+    <br>
+    <div class="text"></div>
+    <div class="button hover close">取り消し</div>
+</div>
+
+<div class="factory">
+    <div class="grid_container">
+        <div class="add_button hover">人形を加え</div>
+        <div class="char xhidden">
+            <div class="img"></div>
+            <div class="aura_container">
+                <table class="aura_table">
+                    <tr><td class="aura_7 aura"></td><td class="aura_8 aura"></td><td class="aura_9 aura"></td></tr>
+                    <tr><td class="aura_4 aura"></td><td class="aura_5 aura"></td><td class="aura_6 aura"></td></tr>
+                    <tr><td class="aura_1 aura"></td><td class="aura_2 aura"></td><td class="aura_3 aura"></td></tr>
+                </table>
+            </div>
+            <div class="control_container">
+                <div class="item">
+                    <select class="level">
+                        <option value="100">100</option>
+                        <option value="99">99</option>
+                        <option value="98">98</option>
+                        <option value="97">97</option>
+                        <option value="96">96</option>
+                        <option value="95">95</option>
+                        <option value="94">94</option>
+                        <option value="93">93</option>
+                        <option value="92">92</option>
+                        <option value="91">91</option>
+                        <option value="90">90</option>
+                        <option value="80">80</option>
+                        <option value="70">70</option>
+                        <option value="60">60</option>
+                        <option value="50">50</option>
+                        <option value="40">40</option>
+                        <option value="30">30</option>
+                        <option value="20">20</option>
+                        <option value="10">10</option>
+                        <option value="1">1</option>
+                    </select>
+                    <select class="modLevel">
+                        <option value="3">mod3</option>
+                        <option value="2">mod2</option>
+                        <option value="1">mod1</option>
+                    </select>
+                </div>
+                <div class="item skill_control_container">
+                    <label><input type="checkbox" class="skill_control">スキル</label>
+                </div>
+                <div class="item">
+                    <select class="skill_stack">
+                    </select>
+                </div>
+                <div class="item">
+                    <select class="skill_effect">
+                    </select>
+                </div>
+                <div class="item">
+                    <select class="skill_level">
+                        <option value="10">10</option>
+                        <option value="9">9</option>
+                        <option value="8">8</option>
+                        <option value="7">7</option>
+                        <option value="6">6</option>
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="item">
+                    <select class="mod_skill_level">
+                        <option value="10">ｻﾌﾞｽｷﾙ10</option>
+                        <option value="9">ｻﾌﾞｽｷﾙ9</option>
+                        <option value="8">ｻﾌﾞｽｷﾙ8</option>
+                        <option value="7">ｻﾌﾞｽｷﾙ7</option>
+                        <option value="6">ｻﾌﾞｽｷﾙ6</option>
+                        <option value="5">ｻﾌﾞｽｷﾙ5</option>
+                        <option value="4">ｻﾌﾞｽｷﾙ4</option>
+                        <option value="3">ｻﾌﾞｽｷﾙ3</option>
+                        <option value="2">ｻﾌﾞｽｷﾙ2</option>
+                        <option value="1">ｻﾌﾞｽｷﾙ1</option>
+                    </select>
+                </div>
+            </div>
+            <div class="friendship hover" value="none_friendly">
+                <img src="assets/none_friendly.png">
+            </div>
+        </div>
+        <div class="equipment_container xhidden">
+            <div class="equipment equipment_1 button hover">new</div>
+            <div class="item">
+                <select class="equipment_strengthen_1">
+                    <option value="10">+10</option>
+                    <option value="9">+9</option>
+                    <option value="8">+8</option>
+                    <option value="7">+7</option>
+                    <option value="6">+6</option>
+                    <option value="5">+5</option>
+                    <option value="4">+4</option>
+                    <option value="3">+3</option>
+                    <option value="2">+2</option>
+                    <option value="1">+1</option>
+                    <option value="0">+0</option>
+                </select>
+            </div>
+            <div class="clear"></div>
+            <div class="equipment equipment_2 button hover">new</div>
+            <div class="item">
+                <select class="equipment_strengthen_2">
+                    <option value="10">+10</option>
+                    <option value="9">+9</option>
+                    <option value="8">+8</option>
+                    <option value="7">+7</option>
+                    <option value="6">+6</option>
+                    <option value="5">+5</option>
+                    <option value="4">+4</option>
+                    <option value="3">+3</option>
+                    <option value="2">+2</option>
+                    <option value="1">+1</option>
+                    <option value="0">+0</option>
+                </select>
+            </div>
+            <div class="clear"></div>
+            <div class="equipment equipment_3 button hover">new</div>
+            <div class="item">
+                <select class="equipment_strengthen_3">
+                    <option value="10">+10</option>
+                    <option value="9">+9</option>
+                    <option value="8">+8</option>
+                    <option value="7">+7</option>
+                    <option value="6">+6</option>
+                    <option value="5">+5</option>
+                    <option value="4">+4</option>
+                    <option value="3">+3</option>
+                    <option value="2">+2</option>
+                    <option value="1">+1</option>
+                    <option value="1">+1</option>
+                    <option value="0">+0</option>
+                </select>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="char_performance">
+        <div class="title name">名前</div>
+        <div class="value name">-</div>
+        <div class="clear"></div>
+        <div class="title hp">HP</div>
+        <div class="value hp">-</div>
+        <div class="title dmg">ﾀﾞﾒｰｼﾞ</div>
+        <div class="value dmg">-</div>
+        <div class="clear"></div>
+        <div class="title hit">ヒット</div>
+        <div class="value hit">-</div>
+        <div class="clear"></div>
+        <div class="title dodge">ドッジ</div>
+        <div class="value dodge">-</div>
+        <div class="clear"></div>
+        <div class="title fireOfRate">射撃速度</div>
+        <div class="value fireOfRate">-</div>
+        <div class="title attackFrame">ﾌﾚｲﾑ</div>
+        <div class="value attackFrame">-</div>
+        <div class="clear"></div>
+        <div class="title criRate">ｸﾘﾃｨｶﾙ率</div>
+        <div class="value criRate">-</div>
+        <div class="title criDmg">ｸﾘﾃｨｶﾙﾀﾞﾒｰｼﾞ</div>
+        <div class="value criDmg">-</div>
+        <div class="title armorPiercing">徹甲能力</div>
+        <div class="value armorPiercing">-</div>
+        <div class="title armor">アーマー</div>
+        <div class="value armor">-</div>
+        <div class="title ammoCount">装弾数</div>
+        <div class="value ammoCount">-</div>
+        <div class="title perDmg">攻撃毎ﾀﾞﾒｰｼﾞ</div>
+        <div class="value perDmg">-</div>
+        <div class="title dps">DPS</div>
+        <div class="value dps">-</div>
+        <div class="title skillAttack">ｽｷﾙﾀﾞﾒｰｼﾞ</div>
+        <div class="value skillAttack">-</div>
+        <div class="clear"></div>
+    </div>
+</div>
